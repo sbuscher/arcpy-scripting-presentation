@@ -37,9 +37,9 @@
                         ## About
 
                         * GIS application developer
-                        * Full technology stack
-                        * Full ESRI stack
-                        * Diversified industries
+                        * HTML5, .NET, Python, SQL
+                        * ArcGIS JavaScript, ArcGIS Runtime, ArcPy
+                        * Diversified LOB apps
                     </script>
                 </section>
                 <section data-markdown>
@@ -49,6 +49,8 @@
                         [Online]()
 
                         [PDF download]()
+
+                        [GitHub Repository]()
                     </script>
                 </section>
                 <section data-markdown>
@@ -57,7 +59,7 @@
 
                         * Address what isn't covered by samples
                         * Learn Python and ArcPy best practices
-                        * Provide a formal approach to develop, debug, organize and maintain scripts
+                        * Develop, debug, organize and maintain scripts
                         * Minimal Python and ArcPy experience required
                     </script>
                 </section>
@@ -74,7 +76,7 @@
                     <script type="text/template">
                         ## The Case for Python
 
-                        Free, open source and cross-platform
+                        Free | Open Source | Cross-platform
 
                         Widely adopted
 
@@ -89,7 +91,7 @@
                             ## Essentials
 
                             * At a minimum:
-                                * ArcGIS Desktop or Pro --> Python and ArcPy package
+                                * ArcGIS Desktop or Pro --> Python and ArcPy
                                 * ArcPy and Python reference documentation
                                 * Text editor
                             * Recommend:
@@ -101,54 +103,61 @@
                         <script type="text/template">
                             ## ArcGIS Desktop Setup
 
-                            * Desktop installer includes 32-bit and 64-bit Python
-                            * 32-bit installed when choosing Python during setup
-                            * Additionally install [Background Geoprocessing](http://desktop.arcgis.com/en/arcmap/latest/analyze/executing-tools/64bit-background.htm) on 64-bit machines
-                            * Default install location: *C:\Python27*
-                            * Globally execute python.exe by adding it to your PATH environment variable
+                            * Desktop installer includes 32-bit & 64-bit Python
+                                * 32-bit is installed by default
+                                * [Background Geoprocessing](http://desktop.arcgis.com/en/arcmap/latest/analyze/executing-tools/64bit-background.htm) optional
+                            * Python 2.7
+                            * Default install: *C:\Python27*
 
                             Note:
-                            Show Python 32 and 64 bit directories, site-packages, .pth to arcpy, add python.exe to your path
+                            Show Python 32 and 64 bit directories, site-packages, .pth to arcpy,
+                            Show where ArcPy lib resides: C:\Program Files (x86)\ArcGIS\Desktop10.3\arcpy
+                            Note ..\site-packages\DTBGGP64.pth references arcpy
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## ArcGIS Pro
 
-                            * [Conda](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm) package manager
-                            * Python 3.4
-                            * [Migrating to ArcGIS Pro](http://pro.arcgis.com/en/pro-app/arcpy/get-started/python-migration-for-arcgis-pro.htm)
+                            * 64-bit | Python3.5 | [Conda](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm) package manager
+                            * *C:\Program Files\ArcGIS\Pro\bin\Python*
                             * [Python in ArcGIS Pro](http://pro.arcgis.com/en/pro-app/arcpy/get-started/installing-python-for-arcgis-pro.htm)
+                            * [Migrating to ArcGIS Pro](http://pro.arcgis.com/en/pro-app/arcpy/get-started/python-migration-for-arcgis-pro.htm)
+
+                            Note:
+                            Show Python directory: C:\Program Files\ArcGIS\Pro\bin\Python
+                            Show ArcPy lib directory: C:\Program Files\ArcGIS\Pro\Resources\ArcPy
+                            Note that propy.
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## Reference documentation
 
-                            **ArcGIS Desktop**
-                            * [ArcGIS Desktop ArcPy Reference](http://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm)
-                            * [ArcGIS Desktop Tool Reference](http://desktop.arcgis.com/en/arcmap/10.3/main/tools/a-quick-tour-of-geoprocessing-tool-references.htm)
-                            * [Python 2.7 Docs](https://docs.python.org/2/)
-
-                            **ArcGIS Pro**
-                            * [ArcGIS Pro ArcPy Reference](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm)
-                            * [ArcGIS Pro Tool Reference](http://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm)
-                            * [Python 3.4 Docs](https://docs.python.org/3.4/)
+                            * ArcGIS Desktop
+                                * [ArcGIS Desktop ArcPy Reference](http://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm)
+                                * [ArcGIS Desktop Tool Reference](http://desktop.arcgis.com/en/arcmap/10.3/main/tools/a-quick-tour-of-geoprocessing-tool-references.htm)
+                                * [Python 2.7 Docs](https://docs.python.org/2/)
+                            * ArcGIS Pro
+                                * [ArcGIS Pro ArcPy Reference](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm)
+                                * [ArcGIS Pro Tool Reference](http://pro.arcgis.com/en/pro-app/tool-reference/main/arcgis-pro-tool-reference.htm)
+                                * [Python 3.4 Docs](https://docs.python.org/3.4/)
+                            * [GeoNet](https://geonet.esri.com/community/developers/gis-developers/python/content) Python Community
+                            * [PEP8](https://www.python.org/dev/peps/pep-0008/) Python style guide
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            ## Where to write your code: IDE
+                            ## Python Code Editors
 
-                            * Features to look for:
+                            * Main features to look for in an IDE:
                                 * Code completion
-                                * Syntax highlighting
-                                * Error highlighting
+                                * Syntax and error highlighting
                                 * Debugging
-                                * Code templates
                             * [PyCharm Community Edition](https://www.jetbrains.com/pycharm/download/#section=windows)
 
                             Note:
+                            IDLE comes with Desktop/Pro
                             [How to set up an IDE to use in Anaconda](https://docs.continuum.io/anaconda/ide_integration)
                             [Choosing the Right Python IDE](https://blogs.esri.com/esri/arcgis/2013/06/24/choosing-the-right-python-integrated-development-environment/)
                         </script>
@@ -157,9 +166,193 @@
                         <script type="text/template">
                             ## Source control
 
+                            * Keep your code safe
+                            * Compare (diff) your changes
+                            * Restore a previous version
+                            * Separate new features with branches
+                            * [GitHub](http://www.github.com) | [ESRI GitHub Python Repositories](https://github.com/Esri?utf8=%E2%9C%93&q=&type=&language=python)
                         </script>
                     </section>
                 </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## The Python Interactive Window
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## ArcGIS Desktop and Pro
+
+                            ![Python window](../img/arcgis-py-window.png) <!-- .element height="75% width="75%" -->
+
+                            Note:
+                            Use TourDivide.mxd
+                            Run an arcpy function in Desktop
+                            Run a tool in Pro
+                                count = arcpy.GetCount_management("Route")
+                                Explain that you get a Result object
+                                Cast to int
+                            arcpy already imported
+                            show code completion and note layers and mxd already referenced
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Demo: Desktop Interactive Window
+
+                            TourDivide.mxd
+
+                            ```
+                            # Run a tool
+                            result = arcpy.GetCount_management("Route")
+                            result.getOutput(0)
+                            count = int(result.getOutput(0))
+                            ```
+                            ```
+                            # Run a function
+                            mxd = arcpy.mapping.mapDocument("CURRENT")
+                            arcpy.mapping.ExportToPDF(mxd, r"c:\Temp\TourDivide.pdf")
+                            ```
+                            Note:
+                            arcpy already imported
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Demo: Pro Interactive Window
+
+                            TourDivide.aprx
+                            ```
+                            # Create PDF the Pro way
+                            from arcpy import mp
+                            aprx = mp.ArcGISProject("CURRENT")
+                            layout = aprx.listLayouts("Layout")[0]
+                            arcpy.env.scratchFolder
+                            layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+                            ```
+                            ```
+                            # Create lines from points
+                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb"
+                            arcpy.PointsToLine_management("Route", "Trail")
+                            aprx.save()
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## At The Command Prompt
+
+                            * Desktop and Pro know python.exe location
+                            * Configure python.exe to execute globally
+                            * Add python.exe to your PATH environment variable
+                            * Choose between 2.7 and 3.5
+
+                            ```
+                            C:\Temp> python
+                            Python 2.7.8 (default, Jun 30 2014, 16:08:48) [MSC v.1500 64 bit (AMD64)] on win32
+                            Type "help", "copyright", "credits" or "license" for more information.
+                            >>>
+                            ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## DEMO: Command Prompt
+
+                            <!-- ![Python window](../img/cmd-prompt-py-win.png) -->
+                            ```
+                            # List feature classes
+                            import arcpy
+                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb"
+                            arcpy.ListFeatureClasses()
+                            ```
+                            ```
+                            # Add feature class to MXD
+                            arcpy.ListFeatureClasses()
+                            from arcpy import mapping
+                            mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\Original\Desktop\TourDivide.mxd")
+                            df = arcpy.mapping.ListDataFrames(mxd)[0]
+                            lyr = arcpy.mapping.Layer("Trail")
+                            arcpy.mapping.AddLayer(df, lyr, "TOP")
+                            mxd.save()
+                            del mxd, lyr
+                            ```
+                            Note:
+                            Don't need to open ArcGIS!
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## >>> Summary
+
+                            * Quickly execute functions and tools
+                            * Great way to experiment with syntax
+                            * Not good for multiple line programs
+                            * Gateway to scripting
+
+                        </script>
+                    </section>
+
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Basic Scripting
+
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## PyCharm IDE
+
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Create a script
+
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Setup
+
+                            * Globally execute python
+                            * PyCharm python.exe config
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Running scripts
+
+                            * From Console
+                            * From PyCharm Terminal
+                            * Configure PyCharm 'Run'
+                        </script>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Pass the Arguments
+
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## GetParameters
+
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## GetParameters
+
+                        </script>
+                    </section>
+                </section>
+
                 <section>
                     <script src="https://gist.github.com/sbuscher/b3b90c963f5c49246dab3babb5c5b37d.js"></script>
                 </section>
