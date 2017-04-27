@@ -1,0 +1,72 @@
+﻿aprx = arcpy.mp.ArcGISProject("CURRENT")
+aprx.version
+aprx.mp.
+arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb"
+arcpy.ListFeatureClasses(arcpy.env.workspace)
+arcpy.env.workspace
+arcpy.ListFeatureClasses()
+arcpy.env.scratchFolder
+aprx = arcpy.mp.ArcGISProject("CURRENT")
+aprx.listLayouts()
+aprx.listLayouts()[0]
+aprx.listMaps()
+layouts = aprx.listLayouts()
+layouts
+count(layouts)
+layouts.count()
+layouts.count
+count()
+x = [1,2,3]
+count(x)
+x.count
+x.count(0)
+len(x)
+len(layers)
+len(layouts)
+layouts[0]
+layouts[0].name
+arcpy.Layout
+help(arcpy.Layout)
+arcpy.env.workspae
+arcpy.env.workspace
+arcpy.env.workspace = 'C:\\projects\\arcpy-scripting-presentation\\data\\TourDivide.gdb'
+arcpy.ListFeatureClasses()
+arcpy.env.workspace = 'C:\\projects\\arcpy-scripting-presentation\\data\\Original\\TourDivide.gdb'
+arcpy.ListFeatureClasses()
+arcpy.PointsToLine_management("Route", "Trail")
+arcpy.ListFeatureClasses()
+arcpy.env.workspace
+arcpy.PointsToLine_management("Route", "Trail")
+arcpy.ListFeatureClasses()
+from arcpy import mp
+aprx = mp.ArcGISProject("CURRENT")
+aprx.save()
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts("Layout")[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts("Layout")[0]
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts("Layout")
+layout
+aprx.listLayouts()
+layouts = aprx.listLayouts()
+len(layouts)
+layouts[0]
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts("Layout")[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts()[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts("TourDivide")[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+layout = aprx.listLayouts("TourDivide")
+layout
+layout.count()
+layout.count
+layout
+layout[0]
+layout[1]
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts)[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"Tou
+layout = aprx.listLayouts()
+layout[0].name
+layout[0].exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts()[0] arcpy.env.scratchFolder layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb" arcpy.PointsToLine_management("Route", "Trail") aprx.save()
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts()[0] layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb" arcpy.PointsToLine_management("Route", "Trail") aprx.save()
+arcpy.ListFeatureClasses() from arcpy import mapping mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\desktop\TourDivide.mxd") df = arcpy.mapping.ListDataFrames(mxd)[0] lyr = arcpy.mapping.Layer("Trail") arcpy.mapping.AddLayer(df, lyr, "TOP") mxd.save() del mxd, lyr
