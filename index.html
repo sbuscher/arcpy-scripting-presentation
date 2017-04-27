@@ -67,9 +67,15 @@
                     <script type="text/template">
                         ## The Case for ArcPy Scripting
 
-                        * Eliminate manual and repetive GP tasks
+                        * Eliminate manual and repetitive GP tasks
                         * Leverage functionality not exposed by GP tools
                         * Create toolboxes for use in ArcGIS Desktop and Server
+
+                        Note:
+                        Refresh data
+                        Convert vendor data to usable formats and import
+                        Publish services
+                        Run a custom update cursor to modify data
                     </script>
                 </section>
                 <section data-markdown>
@@ -83,6 +89,9 @@
                         Friendly to beginners and powerful for experts
 
                         > "It is interpreted and dynamically typed and is suited for interactive work and quick prototyping of one-off programs known as scripts while being powerful enough to write large applications in." [ESRI](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-arcpy-.htm)
+
+                        Note:
+                        Used in Big Data, Data Science, AI
                     </script>
                 </section>
                 <section>
@@ -119,7 +128,7 @@
                         <script type="text/template">
                             ## ArcGIS Pro
 
-                            * 64-bit | Python3.5 | [Conda](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm) package manager
+                            * 64-bit | Python 3.5 | [Conda](http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm) package manager
                             * *C:\Program Files\ArcGIS\Pro\bin\Python*
                             * [Python in ArcGIS Pro](http://pro.arcgis.com/en/pro-app/arcpy/get-started/installing-python-for-arcgis-pro.htm)
                             * [Migrating to ArcGIS Pro](http://pro.arcgis.com/en/pro-app/arcpy/get-started/python-migration-for-arcgis-pro.htm)
@@ -127,7 +136,6 @@
                             Note:
                             Show Python directory: C:\Program Files\ArcGIS\Pro\bin\Python
                             Show ArcPy lib directory: C:\Program Files\ArcGIS\Pro\Resources\ArcPy
-                            Note that propy.
                         </script>
                     </section>
                     <section data-markdown>
@@ -206,12 +214,11 @@
                             ```
                             # Run a tool
                             result = arcpy.GetCount_management("Route")
-                            result.getOutput(0)
                             count = int(result.getOutput(0))
                             ```
                             ```
                             # Run a function
-                            mxd = arcpy.mapping.mapDocument("CURRENT")
+                            mxd = arcpy.mapping.MapDocument("CURRENT")
                             arcpy.mapping.ExportToPDF(mxd, r"c:\Temp\TourDivide.pdf")
                             ```
                             Note:
@@ -227,13 +234,12 @@
                             # Create PDF the Pro way
                             from arcpy import mp
                             aprx = mp.ArcGISProject("CURRENT")
-                            layout = aprx.listLayouts("Layout")[0]
-                            arcpy.env.scratchFolder
+                            layout = aprx.listLayouts()[0]
                             layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
                             ```
                             ```
                             # Create lines from points
-                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb"
+                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb"
                             arcpy.PointsToLine_management("Route", "Trail")
                             aprx.save()
                             ```
@@ -264,18 +270,18 @@
                             ```
                             # List feature classes
                             import arcpy
-                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\TourDivide.gdb"
+                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb"
                             arcpy.ListFeatureClasses()
                             ```
                             ```
                             # Add feature class to MXD
-                            arcpy.ListFeatureClasses()
                             from arcpy import mapping
-                            mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\Original\Desktop\TourDivide.mxd")
-                            df = arcpy.mapping.ListDataFrames(mxd)[0]
-                            lyr = arcpy.mapping.Layer("Trail")
-                            arcpy.mapping.AddLayer(df, lyr, "TOP")
-                            mxd.save()
+                            mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\desktop\TourDivide.mxd")
+                            df = mapping.ListDataFrames(mxd)[0]
+                            arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb"
+                            lyr = mapping.Layer("Trail")
+                            mapping.AddLayer(df, lyr, "TOP")
+                            mxd.saveACopy(r"C:\Temp\TourDivideTrail.mxd")
                             del mxd, lyr
                             ```
                             Note:
@@ -423,7 +429,7 @@
                             ## Python Toolbox
 
                             * Similar to a toolbox (.tbx) except...
-                            * Defined in an ASCII .pyt file
+                            * Defined in a .pyt file
                             * Contains one or more tools
                             * Create in ArcMap
                                 * Right-click folder-->New-->Python Toolbox
@@ -625,8 +631,6 @@
                             * Use an IDE with a debugger
                                 * Be a ninja
                                 * You can't debug from ArcMap
-
-                            [Debugging your first app](https://www.jetbrains.com/help/pycharm/2017.1/debugging-your-first-python-application.html)
                         </script>
                     </section>
                     <section data-markdown>
