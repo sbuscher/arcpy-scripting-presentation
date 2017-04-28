@@ -264,13 +264,13 @@
                             ## DEMO: Command Prompt
 
                             <!-- ![Python window](../img/cmd-prompt-py-win.png) -->
-                            ```
+                            ```shell
                             # List feature classes
                             import arcpy
                             arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb"
                             arcpy.ListFeatureClasses()
                             ```
-                            ```
+                            ```shell
                             # Add feature class to MXD
                             from arcpy import mapping
                             mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\desktop\TourDivide.mxd")
