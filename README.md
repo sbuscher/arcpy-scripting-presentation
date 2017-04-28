@@ -6,7 +6,7 @@ Python is a language for all skill levels, friendly to beginners and robust for 
 
 ## Presentation
 
-Python Scripting Techniques for ArcPy is [live](https://sbuscher.github.io/arcpy-scripting-presentation)
+View [Python Scripting Techniques for ArcPy](https://sbuscher.github.io/arcpy-scripting-presentation) live.
 
 ## Working Files
 
