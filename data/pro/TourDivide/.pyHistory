@@ -70,3 +70,5 @@ arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\Original\T
 from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts()[0] layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
 arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb" arcpy.PointsToLine_management("Route", "Trail") aprx.save()
 arcpy.ListFeatureClasses() from arcpy import mapping mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\desktop\TourDivide.mxd") df = arcpy.mapping.ListDataFrames(mxd)[0] lyr = arcpy.mapping.Layer("Trail") arcpy.mapping.AddLayer(df, lyr, "TOP") mxd.save() del mxd, lyr
+from arcpy import mp aprx = mp.ArcGISProject("CURRENT") layout = aprx.listLayouts()[0] layout.exportToPDF(arcpy.env.scratchFolder + r"TourDividePro.pdf")
+arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb" arcpy.PointsToLine_management("Route", "Trail") aprx.save()
