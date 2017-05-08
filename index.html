@@ -24,7 +24,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown="">
+		<section data-markdown="">
                     <script type="text/template">
                         ## ArcPy Scripting Techniques
 
@@ -45,8 +45,8 @@
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-                        ## Presentation Availability
-
+                        ## Presentation Availability/!
+			
                         [https://sbuscher.github.io/arcpy-scripting-presentation](https://sbuscher.github.io/arcpy-scripting-presentation)
                         [GitHub Repository](https://github.com/sbuscher/arcpy-scripting-presentation/tree/gh-pages)
                     </script>
@@ -190,7 +190,7 @@
                         <script type="text/template">
                             ## ArcGIS Desktop and Pro
 
-                            ![Python window](../img/arcgis-py-window.png) <!-- .element height="75% width="75%" -->
+                            ![Python window](https://raw.githubusercontent.com/sbuscher/arcpy-scripting-presentation/gh-pages/img/arcgis-py-window.PNG) <!-- .element height="75% width="75%" -->
 
                             Note:
                             Use TourDivide.mxd
@@ -265,13 +265,13 @@
                             ## DEMO: Command Prompt
 
                             <!-- ![Python window](../img/cmd-prompt-py-win.png) -->
-                            ```
+                            ```shell
                             # List feature classes
                             import arcpy
                             arcpy.env.workspace = r"C:\projects\arcpy-scripting-presentation\data\gdb\TourDivide.gdb"
                             arcpy.ListFeatureClasses()
                             ```
-                            ```
+                            ```shell
                             # Add feature class to MXD
                             from arcpy import mapping
                             mxd = mapping.MapDocument(r"C:\projects\arcpy-scripting-presentation\data\desktop\TourDivide.mxd")
@@ -324,7 +324,7 @@
                         <script type="text/template">
                             ## The IDE
 
-                            ![PyCharm](../img/pycharm.png) <!-- .element height="70%" width="70%" -->
+                            ![PyCharm](https://raw.githubusercontent.com/sbuscher/arcpy-scripting-presentation/gh-pages/img/pycharm.png) <!-- .element height="70%" width="70%" -->
 
                             [Guided Tour](https://www.jetbrains.com/help/pycharm/2017.1/guided-tour-around-pycharm-user-interface.html)
 
@@ -596,7 +596,7 @@
                             ## Scheduled Tasks
 
                             Automate execution of Python scripts
-                            ![task scheduler](../img/TaskScheduler.png) <!-- .element height="75%" width="75%" -->
+                            ![task scheduler](https://raw.githubusercontent.com/sbuscher/arcpy-scripting-presentation/gh-pages/img/TaskScheduler.png) <!-- .element height="75%" width="75%" -->
 
                         </script>
                     </section>
@@ -654,7 +654,7 @@
 
                             * Errors happen :(
 
-                            ```
+                            ```python
                             try:
                                 # your perfect code
                             except Exception:
@@ -669,7 +669,7 @@
                         <script type="text/template">
                             ## Separate GP and Python Errors
 
-                            ```
+                            ```python
                             import arcpy
                             import sys
                             import traceback
